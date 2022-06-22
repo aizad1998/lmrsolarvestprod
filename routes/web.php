@@ -18,6 +18,11 @@ Route::get('/', function () {
 });
 Route::get('/index', function () {
     return view('index');
+    
+});
+Route::get('/charts', function () {
+    return view('charts');
+    
 });
 Route::get('/dashboard-eCommerce', function () {
     return view('dashboard-eCommerce');

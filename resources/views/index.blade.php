@@ -89,18 +89,11 @@
 						<div class="card-body">
 							<div class="d-flex align-items-center">
 								<div>
-									<h6 class="mb-0">Average Active Power</h6>
+									<h5 class="mb-0">Energy Consumption</h5>
 								</div>
-								<div class="font-22 ms-auto text-white"><i class="bx bx-dots-horizontal-rounded"></i>
-								</div>
-							</div>
-							<div class="d-flex align-items-center ms-auto font-13 gap-2 my-3">
-								<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1" style="color: rgba(235, 64, 52, 0.8)"></i>Active Power A</span>
-								<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1" style="color: rgba(235, 229, 52, 0.8)"></i>Active Power B</span>
-								<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1" style="color: rgba(71, 209, 237, 0.8)"></i>Active Power C</span>
 							</div>
 						   <div class="chart-container-1">
-							 <canvas id="chart1"></canvas>
+						   <div id="containermaps"></div>
 						   </div>
 						</div>
 						<div hidden class="row row-cols-1 row-cols-md-3 row-cols-xl-3 g-0 row-group text-center border-top">
@@ -131,35 +124,37 @@
 						  <div class="card-body">
 							<div class="d-flex align-items-center">
 								<div>
-									<h6 class="mb-0">Total Consumption</h6>
+									<h5 class="mb-0">Total Consumption</h5>
 								</div>
 								<div class="font-22 ms-auto text-white"><i class="bx bx-dots-horizontal-rounded"></i>
 								</div>
 							</div>
 							<div class="chart-container-2 my-3">
-							  <canvas id="chart2"></canvas>
+							  <!-- <canvas id="chart2"></canvas> -->
+							  <div id="circlebar" style="width: 100%; height: 100%; position: absolute; margin: 0 auto;">
+								</div>
+								
+							  
 							 </div>
 						  </div>
 						  <div class="table-responsive">
 							<table class="table align-items-center mb-0">
 							  <tbody>
 								<tr>
-								  <td><i class="bx bxs-circle text-white me-2"></i>This Month</td>
-								  <td>0.08</td>
-								  <td>GWh</td>
-								  <td>Apr (Day 2)</td>
+								  <td><i class="bx bxs-circle me-1" style="color: rgba(124,181,236, 0.8)"></i>Solar Generation</td>
+								  <td>52.36 GWh</td>
+								  
 								</tr>
 								<tr>
-								  <td><i class="bx bxs-circle text-light-2 me-2"></i>This Month (Forecast)</td>
-								  <td>1.22</td>
-								  <td>GWh</td>
-								  <td>Apr</td>
+								  <td><i class="bx bxs-circle me-1" style="color: rgba(144,237,125, 0.8)"></i>This Month (2 Apr)</td>
+								  <td>63.21 GWh</td>
+								  
 								</tr>
 								<tr>
-								  <td><i class="bx bxs-circle text-light-3 me-2"></i>Last Month</td>
-								  <td>1.22</td>
-								  <td>GWh</td>
-								  <td>Mar</td>
+								  <td><i class="bx bxs-circle me-1" style="color: rgba(242,44,107, 0.8)"></i>This Month (Forecast)</td>
+								  <td>83.51 GWh</td>
+								  
+								  
 								</tr>
 								<tr hidden>
 								  <td><i class="bx bxs-circle text-light-4 me-2"></i>Other</td>
@@ -173,434 +168,107 @@
 					</div>
 				   </div><!--End Row-->
 
-				   <h6 class="mb-0" >Total Carbon Emmission</h6>
-				   <div class="row row-cols-1 row-cols-lg-3" style="margin-top: 7px">
-					<div class="col">
+				   
+				   <div class="row" style="margin-top: 7px">
+					<div class="col-12 col-lg-6 col-xl-6">
+					<h5 class="mb-0" style="padding-bottom:10px">Renewable Energy Certificate (REC)</h5>
 					   <div class="card radius-10">
 						 <div class="card-body">
 						   <div class="d-flex align-items-center">
-							 <div hidden class="w_chart easy-dash-chart" data-percent="100">
-							   <span class="w_percent"></span>
+							 <div class="me-3 pt-2"><h3 class="ms-1" style>4</h3></div>
+							 <div class="me-auto row">
+							   <h6 class="mb-0">This Month</h6><small class="mb-0">REC</small>
 							 </div>
-							 <div class="me-3 pt-2"><h3 class="ms-1" style>46.0</h3></div>
-							 <div class="me-auto">
-							   <h6 class="mb-0">This Month</h6>
-							   <small class="mb-0">Day 2</small>
-							   <br>
-							   <small class="mb-0">t CO<sup>2</sup> / kWh</small>
-							 </div>
-							 
 						   </div>
 						 </div>
-					   </div>
-					 </div>
-					 <div class="col">
-					   <div class="card radius-10">
 						 <div class="card-body">
 						   <div class="d-flex align-items-center">
-							 <div hidden class="w_chart easy-dash-chart" data-percent="100">
-							   <span class="w_percent"></span>
-							 </div>
-							 <div class="me-3 pt-2"><h3 class="ms-1" style>723.6</h3></div>
-							 <div class="me-auto">
-							   <h6 class="mb-0">This Month</h6>
-							   <small class="mb-0">Forecast</small>
-							   <br>
-							   <small class="mb-0">t CO<sup>2</sup> / kWh</small>
-							 </div>
-							 
-						   </div>
-						 </div>
-					   </div>
-					 </div>
-					 <div class="col">
-					   <div class="card radius-10">
-						 <div class="card-body">
-						   <div class="d-flex align-items-center">
-							 <div hidden class="w_chart easy-dash-chart" data-percent="100">
-							   <span class="w_percent"></span>
-							 </div>
-							 <div class="me-3 pt-2"><h3 class="ms-1" style>725.1</h3></div>
-							 <div class="me-auto">
+							 <div class="me-3 pt-2"><h3 class="ms-1" style>24</h3></div>
+							 <div class="me-auto row">
 							   <h6 class="mb-0">Last Month</h6>
-							   <small class="mb-0">Mar</small>
-							   <br>
+							   <small class="mb-0">REC</small>
+							 </div>
+						   </div>
+						 </div>
+						 <div class="card-body">
+						   <div class="d-flex align-items-center">
+							 <div class="me-3 pt-2"><h3 class="ms-1" style>102</h3></div>
+							 <div class="me-auto row">
+							   <h6 class="mb-0">Accumulative</h6>
+							   <small class="mb-0">REC</small>
+							 </div>
+						   </div>
+						 </div>
+					   </div>
+					 </div>
+					
+					 <div class="col-12 col-lg-3 col-xl-3">
+					 <h5 class="mb-0" style="padding-bottom:10px">Total Carbon Emmission</h5>
+					   <div class="card radius-10">
+						 <div class="card-body">
+						   <div class="d-flex align-items-center">
+							 <div class="me-3 pt-2"><h3 class="ms-1" style>46.0</h3></div>
+							 <div class="me-auto row">
+							   <h6 class="mb-0">This Month (Day 2)</h6>
 							   <small class="mb-0">t CO<sup>2</sup> / kWh</small>
 							 </div>
-							 
 						   </div>
 						 </div>
-					   </div>
-					 </div>
-					</div><!--End Row-->
-
-					<h6 class="mb-0" >Building Energy Index (BEI)</h6>
-				   <div class="row row-cols-1 row-cols-lg-3" style="margin-top: 7px">
-					<div class="col">
-					   <div class="card radius-10">
 						 <div class="card-body">
 						   <div class="d-flex align-items-center">
-							 <div hidden class="w_chart easy-dash-chart" data-percent="100">
-							   <span class="w_percent"></span>
+							 <div class="me-3 pt-2"><h3 class="ms-1" style>723.6</h3></div>
+							 <div class="me-auto row">
+							   <h6 class="mb-0">This Month (Forcast)</h6>
+							   <small class="mb-0">t CO<sup>2</sup> / kWh</small>
 							 </div>
-							 <div class="me-3 pt-2"><h3 class="ms-1" style>28.1</h3></div>
-							 <div class="me-auto">
+						   </div>
+						 </div>
+						 <div class="card-body">
+						   <div class="d-flex align-items-center">
+							 <div class="me-3 pt-2"><h3 class="ms-1" style>725.1</h3></div>
+							 <div class="me-auto row">
 							   <h6 class="mb-0">This Month</h6>
-							   <small class="mb-0">Month 4</small>
-							   <br>
-							   <small class="mb-0">Wh / m<sup>2</sup></small>
+							   <small class="mb-0">t CO<sup>2</sup> / kWh</small>
 							 </div>
-							 
 						   </div>
 						 </div>
 					   </div>
 					 </div>
-					 <div class="col">
+
+					 <div class="col-12 col-lg-3 col-xl-3">
+					 <h5 class="mb-0" style="padding-bottom:10px">Building Energy Index (BEI)</h5>
 					   <div class="card radius-10">
 						 <div class="card-body">
 						   <div class="d-flex align-items-center">
-							 <div hidden class="w_chart easy-dash-chart" data-percent="100">
-							   <span class="w_percent"></span>
+							 <div class="me-3 pt-2"><h3 class="ms-1" style>28.1</h3></div>
+							 <div class="me-auto row">
+							   <h6 class="mb-0">This Month</h6>
+							   <small class="mb-0">Wh / m<sup>2</sup></small>
 							 </div>
+						   </div>
+						 </div>
+						 <div class="card-body">
+						   <div class="d-flex align-items-center">
 							 <div class="me-3 pt-2"><h3 class="ms-1" style>111.3</h3></div>
-							 <div class="me-auto">
-							   <h6 class="mb-0">This Year</h6>
-							   <small class="mb-0">Forecast</small>
-							   <br>
+							 <div class="me-auto row">
+							 	<h6 class="mb-0">This Year</h6>
 							   <small class="mb-0">Wh / m<sup>2</sup></small>
 							 </div>
-							 
 						   </div>
 						 </div>
-					   </div>
-					 </div>
-					 <div class="col">
-					   <div class="card radius-10">
 						 <div class="card-body">
 						   <div class="d-flex align-items-center">
-							 <div hidden class="w_chart easy-dash-chart" data-percent="100">
-							   <span class="w_percent"></span>
-							 </div>
-							 <div class="me-3 pt-2"><h3 class="ms-1" style>0.0</h3></div>
-							 <div class="me-auto">
-							   <h6 class="mb-0">Last Year</h6>
-							   <small class="mb-0">2019</small>
-							   <br>
+							 <div class="me-3 pt-2"><h3 class="ms-1" style>97.1</h3></div>
+							 <div class="me-auto row">
+							 	<h6 class="mb-0">This Month</h6>
 							   <small class="mb-0">Wh / m<sup>2</sup></small>
 							 </div>
-							 
 						   </div>
 						 </div>
 					   </div>
 					 </div>
+
 					</div><!--End Row-->
-
-					<div class="row">
-						<div class="col-12 col-lg-12 col-xl-6">
-						  <div class="card radius-10">
-							<div class="card-body">
-								<div class="d-flex align-items-center mb-3">
-									<div>
-										<h6 class="mb-0">Energy Consumption</h6>
-									</div>
-									<div class="font-22 ms-auto text-white"><i class="bx bx-dots-horizontal-rounded"></i>
-									</div>
-								</div>
-							   <div id="dashboard-map" style="height: 330px;"></div>
-							</div>
-							<div class="table-responsive">
-							   <table class="table table-hover align-items-center">
-								  <thead class="table-light">
-									 <tr>
-										 <th>State</th>
-										 <th>Total Energy Consumption (MWh)</th>
-										 <!-- <th>Trend</th> -->
-									 </tr>
-								 </thead>
-								 <tbody>
-									 <tr>
-										 <td><i class="flag-icon flag-icon-ca me-2"></i> Johor</td>
-										 <td>7.5</td>
-										 <!-- <td><span id="trendchart1"></span></td> -->
-									 </tr>
-									 <tr>
-										 <td><i class="flag-icon flag-icon-us me-2"></i> Kedah</td>
-										 <td>17.3</td>
-										 <!-- <td><span id="trendchart2"></span></td> -->
-									 </tr>
-				   
-									 <tr>
-										 <td><i class="flag-icon flag-icon-in me-2"></i> Kelantan</td>
-										 <td>22.6</td>
-										 <!-- <td><span id="trendchart3"></span></td> -->
-									 </tr>
-				   
-									 <tr>
-										 <td><i class="flag-icon flag-icon-gb me-2"></i> Malacca</td>
-										 <td>9.0</td>
-										 <!-- <td><span id="trendchart4"></span></td> -->
-									 </tr>
-				   
-									 <tr>
-										 <td><i class="flag-icon flag-icon-de me-2"></i> Negeri Sembilan</td>
-										 <td>24.5</td>
-										 <!-- <td><span id="trendchart5"></span></td> -->
-									 </tr>
-
-									 <tr>
-										 <td><i class="flag-icon flag-icon-ca me-2"></i> Pahang</td>
-										 <td>16.0</td>
-										 <!-- <td><span id="trendchart1"></span></td> -->
-									 </tr>
-									 <tr>
-										 <td><i class="flag-icon flag-icon-us me-2"></i> Penang</td>
-										 <td>13.1</td>
-										 <!-- <td><span id="trendchart2"></span></td> -->
-									 </tr>
-				   
-									 <tr>
-										 <td><i class="flag-icon flag-icon-in me-2"></i> Putrajaya</td>
-										 <td>12.1</td>
-										 <!-- <td><span id="trendchart3"></span></td> -->
-									 </tr>
-				   
-									 <tr>
-										 <td><i class="flag-icon flag-icon-gb me-2"></i> Perak</td>
-										 <td>13.2</td>
-										 <!-- <td><span id="trendchart4"></span></td> -->
-									 </tr>
-				   
-									 <tr>
-										 <td><i class="flag-icon flag-icon-de me-2"></i> Perlis</td>
-										 <td>19.2</td>
-										 <!-- <td><span id="trendchart5"></span></td> -->
-									 </tr>
-									 <tr>
-										 <td><i class="flag-icon flag-icon-ca me-2"></i> Sabah</td>
-										 <td>11.2</td>
-										 <!-- <td><span id="trendchart1"></span></td> -->
-									 </tr>
-									 <tr>
-										 <td><i class="flag-icon flag-icon-us me-2"></i>Sarawak</td>
-										 <td>10.4</td>
-										 <!-- <td><span id="trendchart2"></span></td> -->
-									 </tr>
-				   
-									 <tr>
-										 <td><i class="flag-icon flag-icon-in me-2"></i>Selangor</td>
-										 <td>15.0</td>
-										 <!-- <td><span id="trendchart3"></span></td> -->
-									 </tr>
-				   
-									 <tr>
-										 <td><i class="flag-icon flag-icon-gb me-2"></i> Terengganu</td>
-										 <td>11.1</td>
-										 <!-- <td><span id="trendchart4"></span></td> -->
-									 </tr>
-				   
-									 <tr>
-										 <td><i class="flag-icon flag-icon-de me-2"></i> WP Labuan</td>
-										 <td>5.3</td>
-										 <!-- <td><span id="trendchart5"></span></td> -->
-									 </tr>
-									 <tr>
-										 <td><i class="flag-icon flag-icon-de me-2"></i> Kuala Lumpur</td>
-										 <td>17.2</td>
-										 <!-- <td><span id="trendchart5"></span></td> -->
-									 </tr>
-									 
-								 </tbody>
-							 </table>
-							 </div>
-						  </div>
-						</div>
-						
-						<div class="col-12 col-lg-12 col-xl-6">
-						   <div class="row">
-							 <div class="col-12 col-lg-6">
-							   <div class="card radius-10 overflow-hidden">
-								<div class="card-body">
-								   <p>Page Views</p>
-								   <h4 class="mb-0">8,293 <small class="font-13">5.2% <i class="zmdi zmdi-long-arrow-up"></i></small></h4>
-								</div>
-								<div class="chart-container-2">
-								  <canvas id="chart3"></canvas>
-								</div>
-							  </div>
-							 </div>
-							 <div class="col-12 col-lg-6">
-							   <div class="card radius-10 overflow-hidden">
-								<div class="card-body">
-								   <p>Total Clicks</p>
-								   <h4 class="mb-0">7,493 <small class="font-13">1.4% <i class="zmdi zmdi-long-arrow-up"></i></small></h4>
-								</div>
-								<div class="chart-container-2">
-								 <canvas id="chart4"></canvas>
-								 </div>
-							  </div>
-							 </div>
-							 <div class="col-12 col-lg-6">
-							   <div class="card radius-10">
-								<div class="card-body text-center">
-								   <p class="mb-4">Total Downloads</p>
-								   <input class="knob" data-width="190" data-height="190" data-readOnly="true" data-thickness=".2" data-angleoffset="90" data-linecap="round" data-bgcolor="rgba(255, 255, 255, 0.14)" data-fgcolor="#fff" data-max="15000" value="8550"/>
-								   <hr>
-								   <p class="mb-0 small-font text-center">3.4% <i class="zmdi zmdi-long-arrow-up"></i> since yesterday</p>
-								</div>
-							  </div>
-							 </div>
-							 <div class="col-12 col-lg-6">
-							   <div class="card radius-10">
-								<div class="card-body">
-								   <p>Device Storage</p>
-								   <h4 class="mb-3">42620/50000</h4>
-								   <hr>
-								   <div class="progress-wrapper mb-4">
-									  <p>Documents <span class="float-right">12GB</span></p>
-									  <div class="progress" style="height:5px;">
-										  <div class="progress-bar" style="width:80%"></div>
-									  </div>
-								   </div>
-								   
-								   <div class="progress-wrapper mb-4">
-									  <p>Images <span class="float-right">10GB</span></p>
-									  <div class="progress" style="height:5px;">
-										  <div class="progress-bar" style="width:60%"></div>
-									  </div>
-								   </div>
-								   
-								   <div class="progress-wrapper mb-4">
-									   <p>Mails <span class="float-right">5GB</span></p>
-									  <div class="progress" style="height:5px;">
-										  <div class="progress-bar" style="width:40%"></div>
-									  </div>
-								   </div>
-								   
-								</div>
-							  </div>
-							 </div>
-						   </div>
-						</div>
-					 </div>
-					 <!-- End Row -->
-
-					 <div hidden class="row">
-						<div class="col-12 col-lg-6 col-xl-4 d-flex">
-						  <div class="card radius-10 overflow-hidden w-100">
-							 <div class="card-body">
-							   <p>Total Earning</p>
-							   <h4 class="mb-0">287,493$</h4>
-							   <small>1.4% <i class="zmdi zmdi-long-arrow-up"></i> Since Last Month</small>
-							   <hr>
-							   <p>Total Sales</p>
-							   <h4 class="mb-0">87,493</h4>
-							   <small>5.43% <i class="zmdi zmdi-long-arrow-up"></i> Since Last Month</small>
-							   <div class="mt-5">
-							   <div class="chart-container-4">
-								 <canvas id="chart5"></canvas>
-								</div>
-							  </div>
-							 </div>
-						  </div>
-						</div>
-				  
-						<div class="col-12 col-lg-6 col-xl-8 d-flex">
-						   <div class="card radius-10 w-100">
-							   <div class="card-header border-bottom">
-								<div class="d-flex align-items-center">
-									<div>
-										<h6 class="mb-0">Customer Review</h6>
-									</div>
-									<div class="font-22 ms-auto text-white"><i class="bx bx-dots-horizontal-rounded"></i>
-									</div>
-								</div>
-							</div>
-							 <ul class="list-group list-group-flush">
-								<li class="list-group-item bg-transparent">
-								  <div class="d-flex align-items-center">
-									<img src="{{ asset('assets/images/avatars/avatar-1.png') }}" alt="user avatar" class="rounded-circle" width="55" height="55">
-								  <div class="ms-3">
-									<h6 class="mb-0">iPhone X <small class="ms-4">08.34 AM</small></h6>
-									<p class="mb-0 small-font">Sara Jhon : This is svery Nice phone in low budget.</p>
-								  </div>
-								  <div class="ms-auto star">
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-light-4'></i>
-									<i class='bx bxs-star text-light-4'></i>
-								  </div>
-								</div>
-								</li>
-								<li class="list-group-item bg-transparent">
-								  <div class="d-flex align-items-center">
-									<img src="{{ asset('assets/images/avatars/avatar-2.png') }}" alt="user avatar" class="rounded-circle" width="55" height="55">
-								  <div class="ms-3">
-									<h6 class="mb-0">Airpod <small class="ml-4">05.26 PM</small></h6>
-									<p class="mb-0 small-font">Danish Josh : The brand apple is original !</p>
-								  </div>
-								  <div class="ms-auto star">
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-light-4'></i>
-									<i class='bx bxs-star text-light-4'></i>
-								  </div>
-								</div>
-								</li>
-								<li class="list-group-item bg-transparent">
-								  <div class="d-flex align-items-center">
-									<img src="{{ asset('assets/images/avatars/avatar-3.png') }}" alt="user avatar" class="rounded-circle" width="55" height="55">
-								  <div class="ms-3">
-									<h6 class="mb-0">MacBook Pro <small class="ml-4">06.45 AM</small></h6>
-									<p class="mb-0 small-font">Jhon Doe : Excllent product and awesome quality</p>
-								  </div>
-								  <div class="ms-auto star">
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-light-4'></i>
-									<i class='bx bxs-star text-light-4'></i>
-								  </div>
-								</div>
-								</li>
-								<li class="list-group-item bg-transparent">
-								  <div class="d-flex align-items-center">
-									<img src="{{ asset('assets/images/avatars/avatar-4.png') }}" alt="user avatar" class="rounded-circle" width="55" height="55">
-								  <div class="ms-3">
-									<h6 class="mb-0">Airpod <small class="ml-4">08.34 AM</small></h6>
-									<p class="mb-0 small-font">Christine : The brand apple is original !</p>
-								  </div>
-								  <div class="ms-auto star">
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-light-4'></i>
-									<i class='bx bxs-star text-light-4'></i>
-								  </div>
-								</div>
-								</li>
-								<li class="list-group-item bg-transparent">
-								  <div class="d-flex align-items-center">
-									<img src="{{ asset('assets/images/avatars/avatar-5.png') }}" alt="user avatar" class="rounded-circle" width="55" height="55">
-								  <div class="ms-3">
-									<h6 class="mb-0">MacBook <small class="ml-4">08.34 AM</small></h6>
-									<p class="mb-0 small-font">Michle : The brand apple is original !</p>
-								  </div>
-								  <div class="ms-auto star">
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-white'></i>
-									<i class='bx bxs-star text-light-4'></i>
-									<i class='bx bxs-star text-light-4'></i>
-								  </div>
-								</div>
-								</li>
-							  </ul>
-						   </div>
-						</div>
-					  </div><!--End Row-->
-
 
 					  <div hidden class="card radius-10">
 						<div class="card-body">
@@ -813,12 +481,23 @@
 	<script src="{{ asset('assets/plugins/sparkline-charts/jquery.sparkline.min.js') }}"></script>
 	<script src="{{ asset('assets/plugins/jquery-knob/excanvas.js') }}"></script>
 	<script src="{{ asset('assets/plugins/jquery-knob/jquery.knob.js') }}"></script>
-	<script src="https://code.highcharts.com/maps/highmaps.js"></script>
-	<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/maps/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/my/my-all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+	<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
 	  <script>
 		  $(function() {
 			  $(".knob").knob();
 		  });
 	  </script>
 	  <script src="{{ asset('assets/js/index.js') }}"></script>
+	  <script src="{{ asset('assets/js/circlebar.js') }}"></script>
+	  <script src="{{ asset('assets/js/dashboard-map.js') }}"></script>
 	@endsection

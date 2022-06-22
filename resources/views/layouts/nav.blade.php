@@ -2,10 +2,10 @@
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
-					<img src="{{ asset('images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
+					<img src="{{ asset('images/lmrlogosmall.png') }}" class="logo-icon" alt="logo icon">
 				</div>
 				<div>
-					<h4 class="logo-text">Dashtremy</h4>
+					<h6 class="logo-text">Energy Monitor</h6>
 				</div>
 				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
 				</div>
@@ -13,6 +13,34 @@
 			<!--navigation-->
 			<ul class="metismenu" id="menu">
 				<li>
+					<a href="{{ url('index') }}">
+						<div class="parent-icon"><i class="bx bx-home-circle"></i>
+						</div>
+						<div class="menu-title">Dashboard</div>
+					</a>
+				</li>
+				<li>
+					<a href="{{ url('charts') }}">
+						<div class="parent-icon"><i class="bx bx-line-chart"></i>
+						</div>
+						<div class="menu-title">Charts</div>
+					</a>
+				</li>
+				<li>
+					<a href="{{ url('user-profile') }}">
+						<div class="parent-icon"><i class="bx bx-grid-alt"></i>
+						</div>
+						<div class="menu-title">Analytics</div>
+					</a>
+				</li>
+				<li>
+					<a href="{{ url('user-profile') }}">
+						<div class="parent-icon"><i class="bx bx-video-recording"></i>
+						</div>
+						<div class="menu-title">Devices</div>
+					</a>
+				</li>
+				<!-- <li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-home-circle'></i>
 						</div>
@@ -60,7 +88,7 @@
 				</li>
 				<li class="menu-label">UI Elements</li>
 				<li>
-					<a href="{{ url('widgets') }}">
+					<a href="{{ url('index') }}">
 						<div class="parent-icon"><i class='bx bx-cookie'></i>
 						</div>
 						<div class="menu-title">Widgets</div>
@@ -328,7 +356,7 @@
 						</div>
 						<div class="menu-title">Support</div>
 					</a>
-				</li>
+				</li> -->
 			</ul>
 			<!--end navigation-->
 		</div>
